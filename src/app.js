@@ -12,7 +12,7 @@ import 'react-dates/initialize'
 
 const store = configureStore()
 
-s/* tore.dispatch(addExpense({
+/* store.dispatch(addExpense({
     description: 'Water bill',
     amount: 4500
 }))
@@ -31,7 +31,6 @@ store.dispatch(addExpense({
 const state = store.getState()
 const expenses = getVisibleExpenses(state.expenses, state.filters)
 console.log(expenses)  
-
  */
 const jsx = (
      <Provider store={store}>         
