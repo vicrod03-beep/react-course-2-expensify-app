@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match Snapshot with multiple expenses 1`] = `
+<h3>
+   Viewing 
+  3
+   expenses, totalling 
+  114195
+</h3>
+`;
+
+exports[`should match Snapshot with single expense 1`] = `
+<h3>
+   Viewing 
+  1
+   expenses, totalling 
+  195
+</h3>
+`;
