@@ -2,8 +2,29 @@ import React from 'react'
 import { connect } from 'react-redux'
 import ExpenseListItem from './ExpenseListItem'
 import getVisibleExpenses from '../selectors/expenses'
+import ExpensesTotal from './ExpensesTotal'
 
-export const ExpenseList = (props) => (
+export class ExpenseList extends React.Component {
+    expenseLenght = () => this.props.expenses.length === 0 ? false : true
+    render () {
+        return (
+            <div>
+                {
+                    this.expenseLenght() && 
+                    this.props.expenses.map(expense => {
+                        return <ExpenseListItem key={expense.id} {...expense} />
+                    })
+                }
+                {
+                     this.expenseLenght() && 
+                     <ExpensesTotal expenses={this.props.expenses} />
+                }
+            </div>
+        )
+    }
+}
+
+/* export const ExpenseList = (props) => (
     <div>
         {
             props.expenses.length === 0 ? 
@@ -12,10 +33,16 @@ export const ExpenseList = (props) => (
             props.expenses.map(expense => {
                 return <ExpenseListItem key={expense.id} {...expense} />
             })
-        }     
+        }  
+        <div>
+            {props.expenses.length === 0 ? 
+             '' :
+            <ExpensesTotal expenses={props.expenses} />
+            }
+        </div>
     </div>
 )
-
+ */
 const mapStateToProps = (state) => ({
         expenses: getVisibleExpenses(state.expenses, state.filters)
 })
