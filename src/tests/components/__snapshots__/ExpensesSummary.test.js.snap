@@ -5,7 +5,8 @@ exports[`should view 1 expense totalling 90 1`] = `
   <h3>
     Viewing 
     1
-     expenses, totalling 
+     expense
+    , totalling 
     $0.90
   </h3>
 </div>
@@ -16,7 +17,9 @@ exports[`should view 2 expenses totalling 94 1`] = `
   <h3>
     Viewing 
     2
-     expenses, totalling 
+     expense
+    s
+    , totalling 
     $0.94
   </h3>
 </div>
