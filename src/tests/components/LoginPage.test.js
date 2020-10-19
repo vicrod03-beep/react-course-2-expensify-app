@@ -1,21 +1,21 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { Header } from '../../components/Header'
+import { LoginPage } from '../../components/LoginPage'
 
 let wrapper, spy
 
 beforeEach(() => {
-    wrapper = shallow(<Header startLogout={() => { }}/>)
+    wrapper = shallow(<LoginPage startLogin={() => { }}/>)
     spy = jest.fn()
 })
 
-test('should render Header correctly', () => {
+test('should correctly render LoginPage', () => {
     expect(wrapper).toMatchSnapshot()
 })
 
-test('should call startLogout on button click', () => {
+test('should call startLogin on button click', () => {
     wrapper.setProps({
-        startLogout: spy
+        startLogin: spy
     })
     wrapper.find('button').simulate('click')
     expect(spy).toHaveBeenCalled()

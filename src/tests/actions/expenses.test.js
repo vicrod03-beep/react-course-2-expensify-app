@@ -49,7 +49,7 @@ test('should setup edit expense action object from firebase', (done) => {
         
         return database.ref(`expenses/${actions[0].id}`).once('value')        
     }).then((snapshot) => {
-        expect(snapshot.val().description).toEqual(updates.description)
+        expect(snapshot.val().description).toBe(updates.description)
         done()
     })
 })
